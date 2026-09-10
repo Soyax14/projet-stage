@@ -1,0 +1,13 @@
+# Extrait du Rapport d'Audit & Qualification CVSS v3.1
+
+Ce tableau récapitule une partie des vulnérabilités identifiées lors des phases de pentest (boîte noire / boîte grise) avant leur remédiation[cite: 1].
+
+| ID | Catégorie | Description | Score CVSS v3.1 | Sévérité | Statut |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **VUL-04** | Cryptographie | Protocole obsolète TLS 1.0 activé sur un sous-domaine legacy[cite: 1] | 7.4 | Haute[cite: 1] | Corrigé[cite: 1] |
+| **VUL-02** | Authentification | Absence de rate limiting sur le formulaire de login (vulnérable au bruteforce)[cite: 1] | 7.5 | Haute[cite: 1] | Corrigé via Fail2Ban[cite: 1] |
+| **VUL-03** | Sessions | Cookie de session distribué sans les attributs HttpOnly ni Secure[cite: 1] | 6.5 | Haute[cite: 1] | Corrigé[cite: 1] |
+| **VUL-01** | Configuration | Exposition de la version PHP via l'en-tête X-Powered-By[cite: 1] | 5.3 | Moyenne[cite: 1] | Corrigé[cite: 1] |
+| **VUL-05** | Configuration | Page d'erreur 500 verbeuse exposant la stack trace[cite: 1] | 4.3 | Faible[cite: 1] | Corrigé[cite: 1] |
+
+*Exemple de vecteur CVSS pour VUL-04 :* `CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N`[cite: 1]
