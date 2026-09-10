@@ -1,0 +1,17 @@
+# Extrait de la configuration Nginx - Sécurisation TLS et En-têtes
+
+# Désactivation des protocoles obsolètes (TLS 1.0 / 1.1)
+ssl_protocols TLSv1.2 TLSv1.3;
+
+# Suites de chiffrement robustes (Perfect Forward Secrecy)
+ssl_ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256;
+ssl_prefer_server_ciphers off;
+
+# Amélioration des performances et de la confidentialité
+ssl_stapling on;
+
+# Sécurité des transports (HSTS) - Forcer le HTTPS sur 1 an
+add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+
+# Masquage des informations système
+server_tokens off;
