@@ -1,0 +1,12 @@
+# Matrice des Flux Réseau (DMZ)
+
+Dans le cadre du cloisonnement réseau, une politique de filtrage stricte a été appliquée sur le pare-feu[cite: 1].
+
+| Source | Destination | Port | Protocole | Justification |
+| :--- | :--- | :--- | :--- | :--- |
+| Internet | Reverse Proxy | 443 | HTTPS (TLS 1.3) | Accès public au site[cite: 1] |
+| Internet | Reverse Proxy | 80 | HTTP | Redirection vers HTTPS uniquement[cite: 1] |
+| Reverse Proxy | Serveur App (DMZ) | 8080 | HTTP interne | Transfert des requêtes[cite: 1] |
+| Serveur App | Base de données | 5432 | PostgreSQL/TLS | Requêtes authentifiées[cite: 1] |
+| Admin VPN | Serveur App | 2222 | SSH (clé RSA) | Administration sécurisée[cite: 1] |
+| Tous | Autres ports | - | - | REFUSÉ par défaut (deny all)[cite: 1] |
